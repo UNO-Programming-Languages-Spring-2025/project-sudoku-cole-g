@@ -6,11 +6,4 @@
 
 % Your implementation please...
 
-x(1..9).
-y(1..9).
-n(1..9).
-
-{sudoku(X,Y,N): n(N)}=1 :- x(X) ,y(Y).
-
 #show sudoku/3.
-
