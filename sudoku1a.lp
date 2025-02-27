@@ -7,13 +7,12 @@
 % Your implementation please...
 
 value(1..4).
-cell(1..4).
 
-{ sudoku(X,Y,V) : value(V) } = 1 :- cell(X,Y).
-sudoku(X,Y,V) :- initial(X,Y,V).
+{ sudoku(X,Y,Z) : value(Z) } = 1 :- X = 1..4, Y = 1..4.
+sudoku(X,Y,Z) :- initial(X,Y,Z).
 
-:- sudoku(X,Y1,V), sudoku(X,Y2,V), Y1 != Y2.
-:- sudoku(X1,Y,V), sudoku(X2,Y,V), X1 != X2.
+:- sudoku(X,Y1,Z), sudoku(X,Y2,Z), Y1 != Y2.
+:- sudoku(X1,Y,Z), sudoku(X2,Y,Z), X1 != X2.
 
 #show sudoku/3.
 
