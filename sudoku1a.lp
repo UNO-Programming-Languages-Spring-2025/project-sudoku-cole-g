@@ -6,11 +6,14 @@
 
 % Your implementation please...
 
-x(1..9).
-y(1..9).
-n(1..9).
+value(1..4).
+cell(1..4).
 
-{sudoku(X,Y,N): n(N)}=1 :- x(X) ,y(Y).
+{ sudoku(X,Y,V) : value(V) } = 1 :- cell(X,Y).
+sudoku(X,Y,V) :- initial(X,Y,V).
+
+:- sudoku(X,Y1,V), sudoku(X,Y2,V), Y1 != Y2.
+:- sudoku(X1,Y,V), sudoku(X2,Y,V), X1 != X2.
 
 #show sudoku/3.
 
